@@ -1,10 +1,10 @@
 <?
 require_once  __DIR__ . '/table/LoggerTable.php';
-Class COreluniverLogger 
+Class COreluniverLogger
 {
-	public static function hello()
+	public static function getMessage(array $data) : bool
 	{
-		echo 'hello';
+		return false;
 	}
 	function OnBuildGlobalMenu(&$aGlobalMenu, &$aModuleMenu)
 	{

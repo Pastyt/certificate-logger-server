@@ -6,7 +6,6 @@ use Bitrix\Main\Entity\DataManager;
 use Bitrix\Main\Entity\IntegerField;
 use Bitrix\Main\Entity\StringField;
 use Bitrix\Main\Entity\DatetimeField;
-use Bitrix\Main\Localization\Loc;
 
 class LoggerTable extends DataManager
 {

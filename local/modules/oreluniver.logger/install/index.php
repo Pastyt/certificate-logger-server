@@ -1,4 +1,6 @@
 <?
+use Bitrix\Main\Application;
+use Bitrix\Main\Entity\Base;
 IncludeModuleLangFile(__FILE__);
 Class oreluniver_logger extends CModule
 {
@@ -26,6 +28,9 @@ Class oreluniver_logger extends CModule
 
 	function InstallDB($arParams = array())
 	{
+		if (!Application::getConnection()->isTableExists(Base::getInstance('\Table\LoggerTable')->getDBTableName())) {
+			Base::getInstance('\Table\LoggerTable')->createDBTable();
+		}
 		RegisterModuleDependences('main', 'OnBuildGlobalMenu', self::MODULE_ID, 'COreluniverLogger', 'OnBuildGlobalMenu');
 		return true;
 	}
